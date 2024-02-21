@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>proj 3</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #chart {
+        margin-top: 20px;
+      }
+      .checkboxes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      #tooltip {
+        opacity: 0;
+        position: absolute;
+        background-color: white;
+        border: solid 1px #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        pointer-events: none;
+        z-index: 100;
+      }
+      .search-container {
+        margin-bottom: 20px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        border: 1px solid #d4d4d4;
+        z-index: 100;
+        display: none;
+      }
+
+      .dropdown-content div {
+        padding: 10px;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content div:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search for a country..."
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="checkboxes"></div>
+      <div id="chart"></div>
+    </div>
+    <div id="tooltip"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
