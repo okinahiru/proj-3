@@ -12,14 +12,23 @@
         justify-content: center;
         align-items: center;
         font-family: Arial, sans-serif;
+        background-color: #e0f7fa;
       }
       .content {
         display: flex;
         flex-direction: column;
         align-items: center;
+        background-color: #b2ebf2;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px #b2ebf2;
       }
       #chart {
         margin-top: 20px;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px #b2ebf2;
       }
       .checkboxes {
         display: flex;
@@ -30,8 +39,8 @@
       #tooltip {
         opacity: 0;
         position: absolute;
-        background-color: white;
-        border: solid 1px #ccc;
+        background-color: #e0f7fa;
+        border: solid 1px #b2ebf2;
         padding: 10px;
         border-radius: 5px;
         pointer-events: none;
@@ -43,9 +52,8 @@
 
       .dropdown-content {
         position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        border: 1px solid #d4d4d4;
+        background-color: #e0f7fa;
+        border: 1px solid #b2ebf2;
         z-index: 100;
         display: none;
       }
@@ -58,19 +66,40 @@
       }
 
       .dropdown-content div:hover {
-        background-color: #f1f1f1;
+        background-color: #b2ebf2;
+      }
+
+      .graph-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .selected-country {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px;
+        background-color: #81d4fa;
+        border-radius: 5px;
+      }
+
+      .selected-country button {
+        margin-left: 5px;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <div class="content">
+      <div class="graph-title">Country/Continent Population by Decade</div>
+
       <div class="search-container">
         <input
           type="text"
           id="searchInput"
-          placeholder="Search for a country..."
+          placeholder="Search for a country/continent..."
           autocomplete="off"
         />
+        <div id="selectedCountries"></div>
       </div>
 
       <div class="checkboxes"></div>
